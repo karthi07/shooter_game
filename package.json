@@ -1,0 +1,11 @@
+{
+  "name": "shooter_game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:karthi07/shooter_game.git",
+  "author": "karthi07 <itkarthi02@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.43.0"
+  }
+}

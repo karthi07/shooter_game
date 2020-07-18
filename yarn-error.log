@@ -1,0 +1,34 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add webpack --dev
+
+PATH: 
+  /home/karthick/.rvm/gems/ruby-2.7.0/bin:/home/karthick/.rvm/gems/ruby-2.7.0@global/bin:/usr/share/rvm/rubies/ruby-2.7.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/share/rvm/bin:/home/karthick/Documents/Karthick/OpenSource/gitlab/
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
+
+npm manifest: 
+  {
+    "name": "shooter_game",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:karthi07/shooter_game.git",
+    "author": "karthi07 <itkarthi02@gmail.com>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
