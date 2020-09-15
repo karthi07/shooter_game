@@ -13,6 +13,10 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "heroku-postbuild": "webpack --config webpack.config.js"
+  },
   "dependencies": {
     "node-fetch": "^2.6.1",
     "phaser": "^3.24.1"
