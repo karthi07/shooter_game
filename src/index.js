@@ -1,22 +1,22 @@
-import 'phaser';
+import Phaser from 'phaser'
 
-import { SceneMainMenu, SceneMain, SceneGameOver } from './scenes/scene-mainmenu';
+import GameScene from './scenes/GameScene'
+import MapScene from './scenes/MapScene'
+import GameoverScene from './scenes/GameoverScene'
+import GetUsername from './scenes/GetUsername'
+import MainMenu from './scenes/MainMenu'
 
-const gameConfig = {
+const config = {
+  type: Phaser.AUTO,
   width: 800,
   height: 600,
-  scene: [
-    SceneMainMenu,
-    SceneMain,
-    SceneGameOver
-  ],
-  pixelArt: true,
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 0 }
+      gravity: { y: 500 }
     }
-  }
-};
+  },
+  scene: [MainMenu, GameScene, GameoverScene, GetUsername]
+}
 
-new Phaser.Game(gameConfig);
+export default new Phaser.Game(config)
