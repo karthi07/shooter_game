@@ -1,3 +1,5 @@
+/* eslint-disable no-empty, import/no-unresolved */
+
 import Phaser from 'phaser';
 import { putScore } from './leaderboard';
 
@@ -5,8 +7,6 @@ let keySpace;
 let textEntry;
 let enterKey = false;
 let currscore;
-
-/* eslint-disable no-empty */
 
 export default class GetUsername extends Phaser.Scene {
   constructor() {

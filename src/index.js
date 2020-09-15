@@ -1,5 +1,6 @@
-import Phaser from 'phaser';
+/* eslint-disable import/no-unresolved */
 
+import Phaser from 'phaser';
 import GameScene from './scenes/GameScene';
 import GameoverScene from './scenes/GameoverScene';
 import GetUsername from './scenes/GetUsername';

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
 
 const GROUND_KEY = 'ground2';
