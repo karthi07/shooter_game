@@ -1,5 +1,5 @@
 # Shooter Game
-  built using Phaser 3. design is a simple but creative game, and its implemented using Phaser
+  Simple shooter game yet the idea is unique, and its implemented using Phaser.
 
 ## Built With
 
@@ -51,7 +51,7 @@
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/karthi07/WeatherApp/issues).
+Feel free to check the [issues page](https://github.com/karthi07/shooter_game/issues).
 
 ## Show your support
 
