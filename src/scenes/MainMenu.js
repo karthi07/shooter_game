@@ -1,6 +1,5 @@
-import Phaser from 'phaser';
-
 /* eslint-disable func-names, import/no-unresolved */
+import Phaser from 'phaser';
 
 export default class MainMenu extends Phaser.Scene {
   constructor() {
