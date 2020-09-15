@@ -4,19 +4,14 @@ class Entity extends Phaser.GameObjects.Sprite {
     this.scene = scene;
     this.scene.add.existing(this);
     this.scene.physics.world.enableBody(this, 0);
-    this.setData("type", type);
-    this.setData("isDead", false);
-
+    this.setData('type', type);
+    this.setData('isDead', false);
   }
-
-
 }
 
 export class PlayerLaser extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, "laser");
+    super(scene, x, y, 'laser');
     this.body.velocity.y = -200;
   }
 }
-
-

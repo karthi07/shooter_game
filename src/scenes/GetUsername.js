@@ -1,18 +1,19 @@
 import Phaser from 'phaser';
 import { putScore } from './leaderboard';
-var keySpace;
-var keyBackspace;
-var textEntry;
-var enterKey = false;
-var currscore;
+
+let keySpace;
+let keyBackspace;
+let textEntry;
+let enterKey = false;
+let currscore;
 
 export default class GetUsername extends Phaser.Scene {
   constructor() {
     super('GetUsername');
   }
+
   init(cscore) {
     currscore = this.scene.settings.data.cscore;
-
   }
 
   create() {
@@ -25,26 +26,20 @@ export default class GetUsername extends Phaser.Scene {
     keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     keyBackspace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.BACKSPACE);
 
-    this.input.keyboard.on('keydown', function (event) {
-
+    this.input.keyboard.on('keydown', (event) => {
       if (event.keyCode === 8 && textEntry.text.length > 0) {
         textEntry.text = textEntry.text.substr(0, textEntry.text.length - 1);
-      }
-      else if (event.keyCode === 32 || (event.keyCode >= 48 && event.keyCode < 90)) {
+      } else if (event.keyCode === 32 || (event.keyCode >= 48 && event.keyCode < 90)) {
         textEntry.text += event.key;
-      }
-      else if (event.keyCode === 13) {
-
+      } else if (event.keyCode === 13) {
         // console.log(textEntry.text);
         // console.log("current score: ", currscore);
         putScore(textEntry.text, currscore).then(() => {
           enterKey = true;
         }).catch((e) => {
-          console.log(e)
+          console.log(e);
         });
-
       }
-
     });
   }
 
@@ -53,10 +48,10 @@ export default class GetUsername extends Phaser.Scene {
 
     }
     if (enterKey) {
-      this.end()
-
+      this.end();
     }
   }
+
   end() {
     // this.scene.start('GameoverScene')
     enterKey = false;

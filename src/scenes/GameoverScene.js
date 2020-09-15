@@ -3,13 +3,13 @@ import { getScores } from './leaderboard';
 
 export default class GameoverScene extends Phaser.Scene {
   constructor() {
-    super({ key: "GameoverScene" });
+    super({ key: 'GameoverScene' });
   }
 
   preload() {
-    this.load.image('PlayBtn', 'assets/button/PlayBtn.png')
-    this.load.image('PlayBtnDown', 'assets/button/PlayBtnDown.png')
-    this.load.image('PlayBtnHover', 'assets/button/PlayBtnHover.png')
+    this.load.image('PlayBtn', 'assets/button/PlayBtn.png');
+    this.load.image('PlayBtnDown', 'assets/button/PlayBtnDown.png');
+    this.load.image('PlayBtnHover', 'assets/button/PlayBtnHover.png');
   }
 
   create() {
@@ -18,48 +18,47 @@ export default class GameoverScene extends Phaser.Scene {
     this.btnPlay = this.add.sprite(
       this.game.config.width * 0.5,
       130,
-      "PlayBtn"
+      'PlayBtn',
     );
     this.btnPlay.setInteractive();
 
-    this.btnPlay.on("pointerover", function () {
-      this.btnPlay.setTexture("PlayBtnHover"); // set the button texture to sprBtnPlayHover
+    this.btnPlay.on('pointerover', function () {
+      this.btnPlay.setTexture('PlayBtnHover'); // set the button texture to sprBtnPlayHover
     }, this);
 
-    this.btnPlay.on("pointerout", function () {
-      this.setTexture("PlayBtn");
+    this.btnPlay.on('pointerout', function () {
+      this.setTexture('PlayBtn');
     });
 
-    this.btnPlay.on("pointerdown", function () {
-      this.btnPlay.setTexture("PlayBtnDown");
+    this.btnPlay.on('pointerdown', function () {
+      this.btnPlay.setTexture('PlayBtnDown');
     }, this);
 
-    this.btnPlay.on("pointerup", function () {
-      this.btnPlay.setTexture("PlayBtn");
-      this.scene.start("GameScene");
+    this.btnPlay.on('pointerup', function () {
+      this.btnPlay.setTexture('PlayBtn');
+      this.scene.start('GameScene');
     }, this);
 
-    let textsettings = {
+    const textsettings = {
       fontFamily: 'monospace',
       fontSize: 48,
       fontStyle: 'bold',
       color: '#ffffff',
-      align: 'center'
-    }
-    let textsettings2 = {
+      align: 'center',
+    };
+    const textsettings2 = {
       fontFamily: 'monospace',
       fontSize: 28,
       fontStyle: 'bold',
       color: '#ffffff',
-      align: 'center'
-    }
+      align: 'center',
+    };
 
-    let mid = this.game.config.width * 0.5;
-    this.title = this.add.text(mid, 50, "Game Over", textsettings);
+    const mid = this.game.config.width * 0.5;
+    this.title = this.add.text(mid, 50, 'Game Over', textsettings);
     this.title.setOrigin(0.5);
 
     getScores().then((scores) => {
-
       scores.sort((a, b) => b.score - a.score);
       this.add.text(200, 200, 'LEADER BOARD', textsettings2);
       this.add.text(200, 250, 'RANK  SCORE   NAME', textsettings2);
@@ -69,10 +68,5 @@ export default class GameoverScene extends Phaser.Scene {
     }).catch(() => {
 
     });
-
-
   }
-
-
-
 }

@@ -1,5 +1,4 @@
 export class SimpleScene extends Phaser.Scene {
-
   preload() {
     this.load.setBaseURL('http://labs.phaser.io');
 
@@ -12,14 +11,14 @@ export class SimpleScene extends Phaser.Scene {
     // this.add.text(100, 100, 'Hello Phaser!', { fill: '#0f0' });
     this.add.image(400, 300, 'sky');
 
-    var particles = this.add.particles('red');
+    const particles = this.add.particles('red');
 
-    var emitter = particles.createEmitter({
+    const emitter = particles.createEmitter({
       speed: 100,
       scale: { start: 1, end: 0 },
-      blendMode: 'ADD'
+      blendMode: 'ADD',
     });
-    var logo = this.physics.add.image(400, 100, 'logo');
+    const logo = this.physics.add.image(400, 100, 'logo');
 
     logo.setVelocity(100, 200);
     logo.setBounce(1, 1);
