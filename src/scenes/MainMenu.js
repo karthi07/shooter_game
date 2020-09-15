@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 
+/* eslint-disable func-names */
+
 export default class MainMenu extends Phaser.Scene {
   constructor() {
     super({ key: 'MainMenu' });
@@ -12,7 +14,6 @@ export default class MainMenu extends Phaser.Scene {
   }
 
   create() {
-    // this.scene.add('GameScene', GameScene, false);
     this.cameras.main.setBackgroundColor('#000111');
     this.btnPlay = this.add.sprite(
       this.game.config.width * 0.5,

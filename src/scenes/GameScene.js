@@ -1,11 +1,8 @@
 import Phaser from 'phaser';
 
 const GROUND_KEY = 'ground2';
-const DUDE_KEY = 'dude';
-const score = 0;
-// var gameOver = false;
 
-function overlap_virus(lasers, virus) {
+function overlapVirus(lasers, virus) {
   virus.disableBody(true, true);
   lasers.disableBody(true, true);
   this.score += 10;
@@ -15,8 +12,6 @@ function overlap_virus(lasers, virus) {
   }
 }
 function gameover(player, virus) {
-  // this.tween.stop()
-
   this.player.play('attack', false);
   this.player.play('run', false);
   this.player.play('dead', true);
@@ -24,8 +19,22 @@ function gameover(player, virus) {
   virus.disableBody(true, true);
   this.gameOver = true;
   this.end();
-  // this.tween.stop()
 }
+
+
+const createAligned = (scene, totalWidth, texture, scrollFactor) => {
+  const w = scene.textures.get(texture).getSourceImage().width;
+  const count = Math.ceil(totalWidth / w) * scrollFactor;
+
+  let x = 0;
+  for (let i = 0; i < count; i += 1) {
+    const m = scene.add.image(x, scene.scale.height, texture)
+      .setOrigin(0, 1)
+      .setScrollFactor(scrollFactor);
+
+    x += m.width;
+  }
+};
 
 
 export default class GameScene extends Phaser.Scene {
@@ -36,9 +45,6 @@ export default class GameScene extends Phaser.Scene {
     this.player = undefined;
     this.lasers = undefined;
     this.tween = undefined;
-    const gameOver = false;
-
-    let scoreText;
   }
 
   preload() {
@@ -95,7 +101,7 @@ export default class GameScene extends Phaser.Scene {
     this.score = 0;
     this.scoreText = this.add.text(this.player.x, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
-    this.physics.add.collider(this.lasers, virus, overlap_virus, null, this);
+    this.physics.add.collider(this.lasers, virus, overlapVirus, null, this);
     this.physics.add.collider(this.player, virus, gameover, null, this);
 
     this.cursors = this.input.keyboard.createCursorKeys();
@@ -263,18 +269,3 @@ export default class GameScene extends Phaser.Scene {
     return hero;
   }
 }
-
-
-const createAligned = (scene, totalWidth, texture, scrollFactor) => {
-  const w = scene.textures.get(texture).getSourceImage().width;
-  const count = Math.ceil(totalWidth / w) * scrollFactor;
-
-  let x = 0;
-  for (let i = 0; i < count; ++i) {
-    const m = scene.add.image(x, scene.scale.height, texture)
-      .setOrigin(0, 1)
-      .setScrollFactor(scrollFactor);
-
-    x += m.width;
-  }
-};

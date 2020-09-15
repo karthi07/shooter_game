@@ -1,7 +1,6 @@
 import Phaser from 'phaser';
 
 import GameScene from './scenes/GameScene';
-import MapScene from './scenes/MapScene';
 import GameoverScene from './scenes/GameoverScene';
 import GetUsername from './scenes/GetUsername';
 import MainMenu from './scenes/MainMenu';

@@ -23,6 +23,7 @@
     "babel-loader": "^8.1.0",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
-    "phaser": "^3.24.1"
+    "phaser": "^3.24.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }

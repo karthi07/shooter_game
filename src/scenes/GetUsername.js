@@ -2,17 +2,18 @@ import Phaser from 'phaser';
 import { putScore } from './leaderboard';
 
 let keySpace;
-let keyBackspace;
 let textEntry;
 let enterKey = false;
 let currscore;
+
+/* eslint-disable no-empty */
 
 export default class GetUsername extends Phaser.Scene {
   constructor() {
     super('GetUsername');
   }
 
-  init(cscore) {
+  init() {
     currscore = this.scene.settings.data.cscore;
   }
 
@@ -21,10 +22,7 @@ export default class GetUsername extends Phaser.Scene {
 
     textEntry = this.add.text(100, 50, '', { font: '32px Courier', fill: '#ffff00' });
 
-    // keys = this.input.keyboard.addKeys('A,B,C');
-
     keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    keyBackspace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.BACKSPACE);
 
     this.input.keyboard.on('keydown', (event) => {
       if (event.keyCode === 8 && textEntry.text.length > 0) {
@@ -32,13 +30,9 @@ export default class GetUsername extends Phaser.Scene {
       } else if (event.keyCode === 32 || (event.keyCode >= 48 && event.keyCode < 90)) {
         textEntry.text += event.key;
       } else if (event.keyCode === 13) {
-        // console.log(textEntry.text);
-        // console.log("current score: ", currscore);
         putScore(textEntry.text, currscore).then(() => {
           enterKey = true;
-        }).catch((e) => {
-          console.log(e);
-        });
+        }).catch((e) => `error: ${e}`);
       }
     });
   }
