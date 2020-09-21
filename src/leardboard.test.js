@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { putScore, getScores } from './leaderboard.js';
 
 describe('Test Adding Player scores and getting all scores for leaderboard from API', () => {
