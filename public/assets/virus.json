@@ -1,0 +1,83 @@
+{
+	"textures": [
+		{
+			"image": "virus.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 159,
+				"h": 53
+			},
+			"scale": 0.1,
+			"frames": [
+				{
+					"filename": "virus1.svg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 51
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 51,
+						"h": 51
+					}
+				},
+				{
+					"filename": "virus2.svg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 51
+					},
+					"frame": {
+						"x": 54,
+						"y": 1,
+						"w": 51,
+						"h": 51
+					}
+				},
+				{
+					"filename": "virus3.svg",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 51,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 51,
+						"h": 51
+					},
+					"frame": {
+						"x": 107,
+						"y": 1,
+						"w": 51,
+						"h": 51
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4921beb9efe1c9f10a335d1bc233cda2:ee6346971745e8282457cbad0051bcca:f74f4c97ee317a37ce4c989b2dfd3b2a$"
+	}
+}
