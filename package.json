@@ -17,6 +17,7 @@
   "scripts": {
     "start": "node build/server.js",
     "test": "jest",
+    "build": "webpack --config webpack.config.js",
     "heroku-postbuild": "webpack --config webpack.config.js"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 /* eslint-disable no-empty, import/no-unresolved */
 
 import Phaser from 'phaser';
-import { putScore } from './leaderboard';
+import { putScore } from '../leaderboard';
 
 let keySpace;
 let textEntry;

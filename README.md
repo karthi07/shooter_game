@@ -29,9 +29,17 @@
 - clone the project
 - switch to project folder [ `cd shooter_game` ]
 - install reqired project using npm [`npm install`] 
-- start editing js files in `src` directory
-- Use  `npm run build` to run webpack and build files
-- Start the Server using `npm start` to play the game
+
+- run project
+  - Start the Server using `npm start` to play the game
+  - Visit `localhost:8080/`
+
+- developer mode
+  - start editing js files in `src` directory
+  - Use  `npm run test` to test the code
+  - Use  `npm run build` to run webpack and build files
+  - Start the Server using `npm start` to play the game
+  - Visit `localhost:8080/`
 
 
 ### Usage

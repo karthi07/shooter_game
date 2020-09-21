@@ -1,7 +1,7 @@
 /* eslint-disable func-names, import/no-unresolved */
 
 import Phaser from 'phaser';
-import { getScores } from './leaderboard';
+import { getScores } from '../leaderboard';
 
 export default class GameoverScene extends Phaser.Scene {
   constructor() {
