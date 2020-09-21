@@ -9,18 +9,22 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.4.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
     "start": "node build/server.js",
+    "test": "jest",
     "heroku-postbuild": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "@babel/core": "^7.8.6",
     "@babel/preset-env": "^7.8.6",
     "babel-loader": "^8.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "express": "^4.17.1",
     "node-fetch": "^2.6.1",
     "phaser": "^3.24.1",
